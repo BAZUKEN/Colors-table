@@ -1,0 +1,18 @@
+<table matSort (matSortChange)="sortColors($event)">
+  <thead>
+    <tr>
+      <th mat-sort-header="colorName">Color name</th>
+      <th mat-sort-header="hexValue">HEX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let color of colors">
+      <td>{{color.colorName}}</td>
+      <td [ngClass]="{'hex': true}">
+        <span [ngStyle]="{'backgroundColor': color.hexValue}"></span>
+        <span>{{color.hexValue}}</span>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>
